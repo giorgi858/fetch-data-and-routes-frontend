@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import AboutPage from './Pages/AboutPage';
+import HomePage from './Pages/HomePage';
+import ArticleListPage from './Pages/ArticleListPage';
+import ArticlePage from './Pages/ArticlePage';
+import NotFoundPage from './Pages/NotFoundPage';
+import Layout from './Components/Layout';
 
-function App() {
+const App = () => {
+  const navigate = useNavigate()
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />}/>
+            <Route path="article">
+              <Route index element={<ArticleListPage />} />
+              <Route path=":id" element={<ArticlePage/>}/>
+            </Route>  
+        <Route path="about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 

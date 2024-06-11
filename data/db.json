@@ -1,0 +1,24 @@
+{
+    "items": [ 
+        {
+          "id": 1,
+          "title": "Forza Horizon 5"
+        },
+        {
+          "id": 2,
+          "title": "Apex Legends"
+        },
+        {
+          "id": 3,
+          "title": "Battlefield 2042"
+        },
+        {
+          "id": 4,
+          "title": "Fortnite"
+        },
+        {
+          "id": 5,
+          "title": "Genshin Impact"
+        }
+       ]
+}
